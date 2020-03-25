@@ -1,44 +1,55 @@
 import React from "react";
 
-export default function Form(props) {
+export default function Form({
+  formState,
+  inputChange,
+  formSubmit,
+  errors,
+  buttonDisabled,
+  post
+}) {
   return (
-    <form>
-      {" "}
-      {/*onSubmit={formSubmit} */}
+    <form onSubmit={formSubmit}>
       <label htmlFor="name">Name: </label>
       <input
         id="name"
         type="text"
         name="name"
-        value="" //{formState.name}
-        //onChange={inputChange}
+        value={formState.name}
+        onChange={inputChange}
       />
+      {errors.name.length > 0 ? <p className="error">{errors.name}</p> : null}
       <label htmlFor="email">Email: </label>
       <input
         id="email"
         type="text"
         name="email"
-        value="" //{formState.name}
-        //onChange={inputChange}
+        value={formState.email}
+        onChange={inputChange}
       />
+      {errors.email.length > 0 ? (
+        <p className="error"> {errors.email}</p>
+      ) : null}{" "}
       <label htmlFor="pwd">Password: </label>
       <input
         id="pwd"
         type="text"
         name="pwd"
-        value="" //{formState.name}
-        //onChange={inputChange}
+        value={formState.pwd}
+        onChange={inputChange}
       />
+      {errors.pwd.length > 0 ? <p className="error">{errors.pwd}</p> : null}
       <input
         type="checkbox"
         name="terms"
-        checked={true} //{formState.terms}
-        //   onChange={inputChange}
+        checked={formState.terms}
+        onChange={inputChange}
       />
       <label htmlFor="terms" className="terms">
         Terms of Service
       </label>
-      <button>Submit</button> {/*disabled={buttonDisabled}*/}
+      <button disabled={buttonDisabled}>Submit</button>
+      <pre>{JSON.stringify(post, null, 2)}</pre>
     </form>
   );
 }

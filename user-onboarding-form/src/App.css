@@ -1,5 +1,5 @@
 .App {
-  /* text-align: center; */
+  text-align: left;
 }
 
 input[type=text], select {
@@ -10,6 +10,11 @@ input[type=text], select {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
+}
+button {
+  display: block;
+  margin: 5px 0;
+  
 }
 
 button:disabled {
@@ -26,7 +31,7 @@ button:disabled {
 }
 
 .terms {
-  display: block;
+  display: inline-block;
   align-self: self-start;
 }
 

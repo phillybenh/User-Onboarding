@@ -15,14 +15,14 @@ const CardContainer = styled.div`
 
 //function
 export default function UserGrid(props) {
-     console.log(props.users);
+    //  console.log("props", props);
 
   return (
     <CardContainer>
-      {/* {props.users.map((item, index) => {
+      {props.users.map((item, index) => {
         return <UserCard key={index} item={item} />;
-      })} */}
-      <p>hi</p>
+      })}
+      
     </CardContainer>
   );
 }

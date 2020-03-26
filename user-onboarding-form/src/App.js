@@ -39,14 +39,12 @@ function App() {
     terms: ""
   });
 
-  //button state
+  // state's
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
-  //State for post request
   const [post, setPost] = useState([]);
 
-  //state for users array
-  let [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([]);
 
   // adding a useEffect to validate w/ the schema every time formState updates
   useEffect(() => {
@@ -89,13 +87,22 @@ function App() {
 
   const formSubmit = event => {
     event.preventDefault();
-
     axios
       .post("https://reqres.in/api/users", formState)
       .then(res => {
         setPost(res.data);
+        // console.log(res.data);
         // console.log("success", post);
-        setUsers(...users, res.data);
+        const newUser = {
+          createdAt: res.data.createdAt,
+          email: res.data.email,
+          id: res.data.id,
+          name: res.data.name,
+          pwd: res.data.pwd,
+          terms: res.data.terms
+        };
+        setUsers([...users, newUser]);
+        console.log("users", users)
 
         setFormState({
           name: "",
@@ -119,7 +126,12 @@ function App() {
         buttonDisabled={buttonDisabled}
         post={post}
       />
-      <UserGrid users={users} />
+      {/* {users.map(user => (
+        <div key={user.id}>
+          {user.name} 
+        </div>
+      ))} */}
+      <UserGrid users={users} /> 
     </div>
   );
 }

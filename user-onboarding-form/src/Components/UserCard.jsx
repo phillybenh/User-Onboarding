@@ -30,15 +30,15 @@ export default function UserCard(props) {
   const data = props.item;
   return (
     <Card>
-      <h2>yo</h2>
-      {/* <Para>User Data:</Para>
+      <Para>User Data:</Para>
       <List>
-        <li>Birth Year: {data.birth_year}</li>
-        <li>Gender: {data.gender}</li>
-        <li>Eye Color: {data.eye_color}</li>
-        <li>Hair Color: {data.hair_color}</li>
-        <li>Height: {data.height}cm</li>
-      </List> */}
+        <li>Name: {data.name}</li>
+        <li>ID: {data.id}</li>
+        <li>Email: {data.email}</li>
+        <li>Password: {data.pwd}</li>
+        <li>Created at: {data.createdAt}cm</li>
+        <li>Terms Accepted?: {data.terms}cm</li>
+      </List>
     </Card>
   );
 }

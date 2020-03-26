@@ -3,18 +3,18 @@ import styled from "styled-components";
 
 //Styles
 const Card = styled.section`
-  background: black;
-  color: yellow;
-  width: 225px;
-  max-height: 300px;
-  border-radius: 15px;
+  background: peachpuff;
+  color: teal;
+  // width: 90%;
+  // max-height: 300px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   // align-items: flex-start;
   text-align: left;
   padding: 10px;
-  margin: 10px;
+  margin: 20px;
 `;
 const List = styled.ul`
   padding: 10px;

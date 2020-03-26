@@ -8,9 +8,9 @@ const CardContainer = styled.div`
   width: 100%;
   padding: 4%;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
 `;
 
 //function

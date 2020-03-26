@@ -49,7 +49,7 @@ export default function Form({
         Terms of Service
       </label>
       <button disabled={buttonDisabled}>Submit</button>
-      <pre>{JSON.stringify(post, null, 2)}</pre>
+      {/* <pre>{JSON.stringify(post, null, 2)}</pre> */}
     </form>
   );
 }
